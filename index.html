@@ -14,57 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <style>
-  @import "https://unpkg.com/open-props/normalize.min.css";
-  @import "https://unpkg.com/open-props";
-  @import "https://unpkg.com/open-props/colors-hsl.min.css";
-  #redirect-button {
-    --_radius: 1.5rem;
-    --_border: 0.125rem;
-    --_padding: 0.25rem;
-    --_text-padding: 0.75rem 1.5rem;
-    position: relative;
-    display: grid;
-    place-items: center;
-    padding: var(--_padding);
-    border: var(--_border) solid hsl(var(--surface-3-hsl));
-    border-radius: var(--_radius);
-    background-attachment: fixed;
-    background-image: conic-gradient(from calc(var(--rx) * 360deg) at calc(var(--x) * 1px) calc(var(--y) * 1px), #f2330d, #26d962, #d9269d, #2680d9, #d94426);
-    font-size: 1.25rem;
-    isolation: isolate;
-  }
-  #button:is(:hover, :focus-visible) {
-    --_hover: 1;
-  }
-  #button::before, #button::after {
-    z-index: -1;
-    content: "";
-  }
-  #button::before {
-    grid-area: 1;
-    block-size: 100%;
-    inline-size: 100%;
-    border-radius: calc(var(--_radius) - var(--_border) - var(--_padding));
-    backdrop-filter: blur(20px) brightness(2) var(--saturate);
-  }
-  #button::after {
-    position: absolute;
-    inset: 0;
-    border-radius: calc(var(--_radius) - var(--_border));
-    background-color: hsl(var(--surface-2-hsl) / calc(1 - var(--_hover, 0) * 0.25));
-    transition: background-color 0.2s;
-  }
-  .text {
-    grid-area: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: var(--_text-padding);
-  }
-  .text > svg {
-    width: 1.5rem;
-    aspect-ratio: 1;
-  }
+  
   :root {
     --surface-2-hsl: var(--gray-3-hsl);
     --surface-3-hsl: var(--gray-4-hsl);
@@ -2163,15 +2113,7 @@
               
               <img src="vtp.png" height="600px" width="100%">
               <br>
-              <button id="redirect-button" style="text-align:center">
-                <span class="text">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z" clip-rule="evenodd" />
-                  </svg>
-                  Visit NearSnap
-                </span>
-              </button>
-
+              <link><a href="https://nearsnap.com" style="color:red; font-size: 25px;">Visit NearSnap</a></link>
     
 
             </section>
@@ -2897,19 +2839,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-var UPDATE = function (_a) {
-  var x = _a.x, y = _a.y;
-  document.documentElement.style.setProperty("--rx", x / window.innerWidth);
-  document.documentElement.style.setProperty("--x", x);
-  document.documentElement.style.setProperty("--y", y);
-};
-document.body.addEventListener("pointermove", UPDATE);
-
-const redirectButton = document.getElementById('redirect-button');
-
-redirectButton.addEventListener('click', () => {
-  window.location.href = 'https://nearsnap.com/login';
-});
 
 
 </script>
